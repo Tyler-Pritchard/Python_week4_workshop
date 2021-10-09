@@ -47,13 +47,37 @@ bankUser1 = User("Bob", 1234, "password")
 # Print the updated attributes. 
 # Save your changes and run the updated code.
 
+# Declare a class and give it the name BankUser.
+class BankUser(User):
+    def __init__(self, name, pin, password):
+        super().__init__(name, pin, password)
+        self.balance = 0
 
-bankUser1.change_name("Jane")
-bankUser1.change_pin(456)
-bankUser1.change_password("new password")
+
+
+# Have the BankUser class inherit the User class. This means it should be child class/subclass of the User parent class/superclass.
+# It should inherit the instance attributes of name, pin, and password.
+# Use the super() function to initialize these inherited attributes using the superclass.
+# Give the BankUser class its own instance attribute as well, which the User class does not have: balance, initialized to a value of 0. 
+# This attribute is not passed in via the parameter list. 
+# Test Task 3
+# Add a comment similar to this under your commented-out driver code for Task 2:
+# """ Driver Code for Task 3"""
+# For your driver code:
+# Instantiate an object of the BankUser class, providing arguments for the name, pin, and password.  
+# Print the attributes of the BankUser object you created: name, PIN, password, and balance.
+# Save and run your code. The output should look similar to this:
+
+bankUser1 = BankUser("Bob", 1234, "password")
+
+print(bankUser1.name, bankUser1.pin, bankUser1.password, bankUser1.balance)
+
+# bankUser1.change_name("Jane")
+# bankUser1.change_pin(456)
+# bankUser1.change_password("new password")
 
 #Driver Code, Task 2
-print(bankUser1.name, bankUser1.pin, bankUser1.password)
+
 
 
 
