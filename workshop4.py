@@ -1,4 +1,3 @@
-
 # For this assignment, you will write "driver code" for each task. Driver code is not a part of your application but is used to test parts of your application.
 # Write this driver code in the same file (workshop4.py), but keep it at the bottom of the file, separated from the rest of your code.
 # Add a comment above your driver code to separate it from the rest of your code, similar to this:
@@ -33,7 +32,7 @@ class User:
 
 
 #INSTANTIATION OF User CLASS
-bankUser1 = User("Bob", 1234, "password")
+
 # Test Task 2
 # Below the commented-out driver code for Task 1, add the driver code for Task 2.
 # You can add a comment such as:
@@ -48,10 +47,6 @@ bankUser1 = User("Bob", 1234, "password")
 # Save your changes and run the updated code.
 
 # Declare a class and give it the name BankUser.
-class BankUser(User):
-    def __init__(self, name, pin, password):
-        super().__init__(name, pin, password)
-        self.balance = 0
 
 
 
@@ -68,9 +63,57 @@ class BankUser(User):
 # Print the attributes of the BankUser object you created: name, PIN, password, and balance.
 # Save and run your code. The output should look similar to this:
 
-bankUser1 = BankUser("Bob", 1234, "password")
 
-print(bankUser1.name, bankUser1.pin, bankUser1.password, bankUser1.balance)
+
+
+#bankUser1 = BankUser("Bob", 1234, "password")
+
+
+
+# Write three methods for the BankUser class:
+# show_balance() - Prints the BankUser object's balance
+# withdraw() - Withdraws money, decreases the account balance
+# deposit() - Deposits money, increases the account balance
+# Test Task 4
+# Add a comment similar to this under your commented-out driver code for Task 3:
+# """ Driver Code for Task 4"""
+# For your driver code:
+# Instantiate an object of the BankUser class, providing arguments for the name, pin, and password.  
+# This can be a copy of the same code you used in Task 4. 
+# Call the show_balance() method of the object.
+# Call the deposit() method, depositing some positive number.
+# Call the show_balance() method once again.
+# Call the withdraw() method, withdrawing some number lower than what was deposited.
+# Call the show_balance() method again. 
+class BankUser(User):
+    def __init__(self, name, pin, password):
+        super().__init__(name, pin, password)
+        self.balance = 0
+
+    def show_balance(self):
+        print(self.name, "has an account balance of: ", self.balance)
+
+    def withdraw(self, amount):
+        self.balance -= amount
+
+    def deposit(self, amount):
+        self.balance += amount
+
+# user2 = BankUser("Tyler", 1234, "password")
+bankUser1 = BankUser("Bob", 1234, "password")
+bankUser1.show_balance()
+print(bankUser1.balance, "Balance")
+bankUser1.deposit(100)
+print("Has an account balance of: ", bankUser1.balance)
+bankUser1.withdraw(50)
+print("Has an account balance of: ", bankUser1.balance)
+
+
+
+
+
+
+#print(bankUser1.name, bankUser1.pin, bankUser1.password, bankUser1.balance)
 
 # bankUser1.change_name("Jane")
 # bankUser1.change_pin(456)
